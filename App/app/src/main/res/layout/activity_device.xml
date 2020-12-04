@@ -7,6 +7,20 @@
     android:background="@color/bg_grey"
     tools:context=".Device">
 
+    <TextView
+        android:id="@+id/deviceIDlbl"
+        android:layout_width="208dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/accent"
+        android:gravity="center_vertical"
+        android:text="Device ID"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/status"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/status"
         android:layout_width="58dp"
@@ -16,7 +30,7 @@
         android:layout_marginRight="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/settings_gear" />
+        app:srcCompat="@drawable/red" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -29,23 +43,96 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/status">
 
-        <TextView
-            android:id="@+id/lastLoclbl"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="82dp"
-            android:text="Last Location:" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/timeStamp"
-            android:layout_width="match_parent"
-            android:layout_height="77dp"
-            android:text="Time Stamp" />
+            <TextView
+                android:id="@+id/distanceLbl"
+                android:layout_width="183dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="20"
+                android:layout_marginLeft="20"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Distance From You:" />
 
-        <TextView
-            android:id="@+id/movingBool"
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="146dp"
+                android:layout_height="93dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="00"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="104dp"
-            android:text="Moving" />
+            android:layout_height="58dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lastLocLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20"
+                android:layout_marginLeft="20"
+                android:layout_weight="1"
+                android:text="Last Location:" />
+
+            <TextView
+                android:id="@+id/lastLoc"
+                android:layout_width="145dp"
+                android:layout_height="47dp"
+                android:gravity="center_horizontal"
+                android:text="Lat: Long:"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/timeStampLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20"
+                android:layout_marginLeft="20"
+                android:layout_weight="1"
+                android:text="Timestamp:" />
+
+            <TextView
+                android:id="@+id/timeStamp"
+                android:layout_width="146dp"
+                android:layout_height="46dp"
+                android:text="00" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/movingLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20"
+                android:layout_marginLeft="20"
+                android:layout_weight="1"
+                android:text="Moving?" />
+
+            <TextView
+                android:id="@+id/movingBool"
+                android:layout_width="146dp"
+                android:layout_height="66dp"
+                android:text="False" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <Button
@@ -53,6 +140,8 @@
         android:layout_width="247dp"
         android:layout_height="97dp"
         android:layout_marginTop="128dp"
+        android:longClickable="true"
+        android:onClick="buzzer"
         android:text="Buzzer"
         app:backgroundTint="@color/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,14 +149,13 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <TextView
-        android:id="@+id/deviceIDlbl"
-        android:layout_width="208dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="32dp"
-        android:background="@color/accent"
-        android:text="Device ID"
-        app:layout_constraintEnd_toStartOf="@+id/status"
-        app:layout_constraintHorizontal_bias="0.369"
+        android:id="@+id/tatuslbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/status" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

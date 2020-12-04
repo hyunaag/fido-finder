@@ -52,15 +52,15 @@
             android:layout_height="49dp"
             android:background="@color/accent"
             android:ems="10"
-            android:inputType="number"
-            android:text="DeviceID" />
+            android:hint="Device ID"
+            android:inputType="number" />
 
         <Button
             android:id="@+id/addDevice"
             android:layout_width="113dp"
             android:layout_height="wrap_content"
             android:text="+ Device"
-            android:onClick="addDevice"
+
             app:backgroundTint="@color/button" />
     </LinearLayout>
 
@@ -74,6 +74,7 @@
         android:layout_marginRight="80dp"
         android:layout_marginBottom="72dp"
         android:longClickable="true"
+        android:onClick="buzzAll"
         android:text="Buzz All"
         app:backgroundTint="@color/button"
         app:layout_constraintBottom_toBottomOf="parent"
