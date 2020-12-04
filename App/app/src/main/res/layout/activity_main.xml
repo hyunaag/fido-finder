@@ -1,26 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_grey"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/buzzer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+        android:id="@+id/signOut"
+        android:layout_width="133dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:onClick="logout"
+        android:text="Sign Out"
+        app:backgroundTint="@color/button"
+        app:layout_constrainedWidth="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/signal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
-</RelativeLayout>
+    <ListView
+        android:id="@+id/deviceList"
+        android:layout_width="359dp"
+        android:layout_height="333dp"
+        android:background="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signOut"
+        app:layout_constraintVertical_bias="0.36" >
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="361dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/buzzAll"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/deviceID"
+            android:layout_width="242dp"
+            android:layout_height="49dp"
+            android:background="@color/accent"
+            android:ems="10"
+            android:inputType="number"
+            android:text="DeviceID" />
+
+        <Button
+            android:id="@+id/addDevice"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:text="+ Device"
+            android:onClick="addDevice"
+            app:backgroundTint="@color/button" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buzzAll"
+        android:layout_width="264dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginLeft="79dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginBottom="72dp"
+        android:longClickable="true"
+        android:text="Buzz All"
+        app:backgroundTint="@color/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
